@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1b2433;
-    --paper: #f7f5f0;
-    --card: #ffffff;
-    --muted: #5d6573;
-    --accent: #9a7a45;
-    --line: #e2ddd2;
+    :root {
+    --ink: #e9e6de;
+    --paper: #141a24;
+    --card: #1d2532;
+    --muted: #aab1bd;
+    --accent: #c9a96e;
+    --line: #2d3644;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -35,7 +35,7 @@
 
   /* Hero */
   .hero { padding-top: 104px; padding-bottom: 80px; border-top: 0; }
-  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 12px 0 8px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 8px 0 6px; }
   .hero .title { font-size: 1.15rem; color: var(--muted); }
   .hero .lead { margin-top: 28px; font-size: 1.15rem; max-width: 620px; }
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
@@ -47,12 +47,14 @@
   .btn.solid { background: var(--ink); color: var(--paper); }
   .btn:hover { background: var(--ink); color: var(--paper); }
 
-  .hero-inner { display: flex; align-items: center; gap: 56px; }
+  .hero-top { display: flex; align-items: center; gap: 28px; }
+  .hero-name { min-width: 0; }
   .hero-text { flex: 1; min-width: 0; }
-  .portrait { flex: 0 0 240px; width: 240px; height: 240px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(27,36,51,.12); }
+  .portrait { flex: 0 0 132px; width: 132px; height: 132px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(27,36,51,.12); }
   @media (max-width: 720px) {
-    .hero-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
-    .portrait { width: 160px; height: 160px; flex-basis: auto; }
+    .hero-top { gap: 16px; }
+    .portrait { width: 96px; height: 96px; flex-basis: 96px; }
+    .hero h1 { font-size: 1.8rem; }
   }
 
   .about-text { max-width: 680px; font-size: 1.05rem; color: var(--ink); }
@@ -107,11 +109,14 @@
 <body>
 
 <header class="hero wrap">
-<div class="hero-inner">
-<div class="hero-text">
-  <p class="eyebrow">SYSTEM ANALYST</p>
-  <h1>黃金昇 <span style="font-weight:500">Samuel Huang</span></h1>
-  <p class="title">30+ 年資訊經驗，專長為系統分析與流程整合</p>
+  <div class="hero-top">
+    <img class="portrait" src="photo.jpg" alt="黃金昇 Samuel Huang">
+    <div class="hero-name">
+      <p class="eyebrow">SYSTEM ANALYST</p>
+      <h1>黃金昇 <span style="font-weight:500">Samuel Huang</span></h1>
+      <p class="title">30+ 年資訊經驗，專長為系統分析與流程整合</p>
+    </div>
+  </div>
   <p class="lead">職涯始於系統分析，之後逐步擴展到 ERP 導入、IT 管理與數據平台，目前專注於飯店營運的系統與數據整合。</p>
   <div class="stats">
     <div class="stat"><b>30<sup>+</sup></b><span>年資訊與行政統籌經驗</span></div>
@@ -122,9 +127,6 @@
     <a class="btn solid" href="mailto:sam2307@gmail.com">聯絡我</a>
     <a class="btn" href="#experience">查看經歷</a>
   </div>
-</div>
-<img class="portrait" src="photo.jpg" alt="黃金昇 Samuel Huang">
-</div>
 </header>
 
 <section id="about">
