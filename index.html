@@ -17,11 +17,6 @@
     --accent: #9a7a45;
     --line: #e2ddd2;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ink: #e9e6de; --paper: #141a24; --card: #1d2532; --muted: #aab1bd; --accent: #c9a96e; --line: #2d3644;
-    }
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -39,7 +34,7 @@
   .eyebrow { color: var(--accent); letter-spacing: .12em; font-size: .9rem; font-weight: 500; }
 
   /* Hero */
-  .hero { padding: 104px 0 80px; border-top: 0; }
+  .hero { padding-top: 104px; padding-bottom: 80px; border-top: 0; }
   .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 12px 0 8px; }
   .hero .title { font-size: 1.15rem; color: var(--muted); }
   .hero .lead { margin-top: 28px; font-size: 1.15rem; max-width: 620px; }
@@ -101,8 +96,9 @@
 
   @media (max-width: 720px) {
     section { padding: 56px 0; }
-    .hero { padding: 72px 0 56px; }
-    .stats { grid-template-columns: 1fr; gap: 20px; }
+    .hero { padding-top: 56px; padding-bottom: 48px; }
+    .stats { grid-template-columns: 1fr; gap: 14px; margin-top: 36px; }
+    .stat b { font-size: 1.7rem; }
     .cards { grid-template-columns: 1fr; }
     .project { padding: 24px 18px; }
   }
