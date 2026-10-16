@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黃金昇 Samuel Huang</title>
+<meta name="description" content="黃金昇 Samuel Huang｜系統分析師，30+ 年資訊與營運管理經驗">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2433;
+    --paper: #f7f5f0;
+    --card: #ffffff;
+    --muted: #5d6573;
+    --accent: #9a7a45;
+    --line: #e2ddd2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e9e6de; --paper: #141a24; --card: #1d2532; --muted: #aab1bd; --accent: #c9a96e; --line: #2d3644;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  h1, h2, h3 { font-family: "Noto Serif TC", "PMingLiU", serif; font-weight: 700; line-height: 1.35; }
+  h2 { font-size: 1.6rem; margin-bottom: 28px; }
+  h2::before { content: ""; display: block; width: 36px; height: 3px; background: var(--accent); margin-bottom: 14px; }
+  .eyebrow { color: var(--accent); letter-spacing: .12em; font-size: .9rem; font-weight: 500; }
+
+  /* Hero */
+  .hero { padding: 104px 0 80px; border-top: 0; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin: 12px 0 8px; }
+  .hero .title { font-size: 1.15rem; color: var(--muted); }
+  .hero .lead { margin-top: 28px; font-size: 1.15rem; max-width: 620px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+  .stat { border-left: 3px solid var(--accent); padding-left: 16px; }
+  .stat b { display: block; font-family: "Noto Serif TC", serif; font-size: 2rem; color: var(--ink); }
+  .stat span { color: var(--muted); font-size: .92rem; }
+  .actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 11px 22px; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-size: .95rem; transition: background .2s, color .2s; }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+  .btn:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-inner { display: flex; align-items: center; gap: 56px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .portrait { flex: 0 0 240px; width: 240px; height: 240px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(27,36,51,.12); }
+  @media (max-width: 720px) {
+    .hero-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .portrait { width: 160px; height: 160px; flex-basis: auto; }
+  }
+
+  .about-text { max-width: 680px; font-size: 1.05rem; color: var(--ink); }
+
+  .stat b sup, .big sup { font-size: .5em; vertical-align: top; line-height: 1; position: relative; top: .2em; margin-left: 1px;  color: #e11d2e; }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); padding: 26px 24px; }
+  .card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+  .card .big { font-family: "Noto Serif TC", serif; font-size: 2.1rem; color: var(--accent); display: block; }
+
+  /* Timeline */
+  .timeline { list-style: none; position: relative; }
+  .timeline li { position: relative; padding: 0 0 30px 28px; border-left: 1px solid var(--line); }
+  .timeline li::before { content: ""; position: absolute; left: -5px; top: 8px; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
+  .timeline li:last-child { border-left-color: transparent; }
+  .timeline .period { color: var(--muted); font-size: .9rem; }
+  .timeline h3 { font-size: 1.1rem; margin: 2px 0 6px; }
+  .timeline ul { padding-left: 18px; color: var(--muted); font-size: .95rem; }
+  .timeline ul li { border: 0; padding: 0; }
+  .timeline ul li::before { display: none; }
+  .early { color: var(--muted); font-size: .92rem; margin-top: 8px; }
+
+  /* Project */
+  .project { background: var(--card); border: 1px solid var(--line); padding: 32px; }
+  .project h3 { font-size: 1.3rem; margin-bottom: 8px; }
+  .project ul { margin-top: 14px; padding-left: 20px; color: var(--muted); }
+  .tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags span { font-size: .85rem; border: 1px solid var(--line); padding: 3px 10px; color: var(--muted); }
+
+  /* Contact */
+  .contact { text-align: left; }
+  .contact p { color: var(--muted); margin-bottom: 20px; max-width: 560px; }
+  .contact .mail { font-family: "Noto Serif TC", serif; font-size: 1.4rem; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--accent); }
+  .contact-list { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-family: "Noto Serif TC", serif; font-size: 1.35rem; border-bottom: 2px solid var(--accent); align-self: flex-start; padding-bottom: 2px; }
+  .contact-item svg { width: 22px; height: 22px; fill: var(--accent); flex: 0 0 22px; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+
+  @media (max-width: 720px) {
+    section { padding: 56px 0; }
+    .hero { padding: 72px 0 56px; }
+    .stats { grid-template-columns: 1fr; gap: 20px; }
+    .cards { grid-template-columns: 1fr; }
+    .project { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+<div class="hero-inner">
+<div class="hero-text">
+  <p class="eyebrow">SYSTEM ANALYST</p>
+  <h1>黃金昇 <span style="font-weight:500">Samuel Huang</span></h1>
+  <p class="title">30+ 年資訊經驗，專長為系統分析與流程整合</p>
+  <p class="lead">職涯始於系統分析，之後逐步擴展到 ERP 導入、IT 管理與數據平台，目前專注於飯店營運的系統與數據整合。</p>
+  <div class="stats">
+    <div class="stat"><b>30<sup>+</sup></b><span>年資訊與行政統籌經驗</span></div>
+    <div class="stat"><b>26<sup>+</sup></b><span>模組上線，含 57 個頁面</span></div>
+    <div class="stat"><b>50%<sup>+</sup></b><span>電信帳務流程節省人工處理</span></div>
+  </div>
+  <div class="actions">
+    <a class="btn solid" href="mailto:sam2307@gmail.com">聯絡我</a>
+    <a class="btn" href="#experience">查看經歷</a>
+  </div>
+</div>
+<img class="portrait" src="photo.jpg" alt="黃金昇 Samuel Huang">
+</div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">ABOUT</p>
+    <h2>關於我</h2>
+    <p class="about-text">我的專業根基在系統分析：將跨部門的營運需求，轉化為流程、資料定義與系統規格。職涯橫跨電信、飯店、半導體與科技業，累積 30 年以上資訊與行政統籌經驗。</p>
+    <p class="about-text" style="margin-top:16px">推動 ERP、BI 與 AI 工具時，我的原則是先定 KPI，再設計從分流、開單、追蹤時效到管理報表的閉環，讓每個試點都能用數字證明成效，並據此決定去留。</p>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <p class="eyebrow">KEY RESULTS</p>
+    <h2>關鍵成果</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="big">26<sup>+</sup></span>
+        <h3>內部營運平台</h3>
+        <p>自主開發並模組化上線 26 個模組、57 個頁面，整合跨單位資訊與作業流程。</p>
+      </div>
+      <div class="card">
+        <span class="big">2h<sup>+</sup></span>
+        <h3>每日節省工時</h3>
+        <p>建置 Power BI 營運儀表板與標準化 SQL 範本，稽核與報表作業每日節省 2 小時以上。</p>
+      </div>
+      <div class="card">
+        <span class="big">ERP</span>
+        <h3>系統導入與數位轉型</h3>
+        <p>導入德安 PMS，建置 Opera 數據分析，並整合 OTA 評論，推動營運數據集中化與決策支援。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">EXPERIENCE</p>
+    <h2>經歷</h2>
+    <ol class="timeline">
+      <li>
+        <p class="period">2026/06 – 2026/10</p>
+        <h3>瀚寓酒店集團｜資訊主管</h3>
+        <ul>
+          <li>規劃並推動德安飯店管理系統（A7）導入，負責 IT 前置作業與付款方式、會計科目對照</li>
+          <li>規劃並建置 Opera 營運分析系統，建立 ADR、住房率、RevPAR 等指標與報表</li>
+        </ul>
+      </li>
+      <li>
+        <p class="period">2024/11 – 2026/03</p>
+        <h3>國聯觀光大飯店｜稽核資訊</h3>
+        <ul>
+          <li>自主研發內部營運平台，導入 AI API 輔助稽核與異常預警</li>
+          <li>開發 Power BI 營運儀表板，整合房務、餐飲與財務數據</li>
+        </ul>
+      </li>
+      <li>
+        <p class="period">2021/09 – 2023/11</p>
+        <h3>先發電光｜管理處處長</h3>
+        <ul>
+          <li>統籌財會、資訊與行政人資三大職能，確保營運流程與法規遵循</li>
+          <li>主導 Oracle Fusion 雲端 ERP 導入，並完成 EIP 整合</li>
+        </ul>
+      </li>
+      <li>
+        <p class="period">2016/11 – 2021/05</p>
+        <h3>向上集團｜資深資訊部經理</h3>
+        <ul>
+          <li>主導集團 ERP（鼎新）導入與合約管理，協助 IPO 上市規劃</li>
+          <li>規劃並建置海外分支（緬甸、成都、西安）資訊基礎架構</li>
+        </ul>
+      </li>
+      <li>
+        <p class="period">2013/08 – 2015/10</p>
+        <h3>六福旅遊集團｜集團資訊協理</h3>
+        <ul>
+          <li>提出 myhotel 行動服務專案，推動 CRM 規劃與 Data Warehouse 建置</li>
+        </ul>
+      </li>
+      <li>
+        <p class="period">2004/06 – 2013/08</p>
+        <h3>台灣大哥大｜副理</h3>
+        <ul>
+          <li>將舊有系統整合為 ERP 與 Billing System，調整帳務流程節省 50% 以上人工處理</li>
+          <li>規劃客服系統與網路自動告警結合，加速障礙處理時效</li>
+        </ul>
+      </li>
+    </ol>
+    <p class="early">早期經歷（1992 – 2003）：和信電訊、中華電腦中心、艾德高科技、美商嘉合資訊系統分析師等，專注於電訊系統與政府專案建置。</p>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <p class="eyebrow">PROJECT</p>
+    <h2>代表專案</h2>
+    <article class="project">
+      <h3>集團 Portal 系統（portal）</h3>
+      <p style="color:var(--muted)">2026/04 – 迄今｜主導開發</p>
+      <ul>
+        <li>以 FastAPI + React（TypeScript、Ant Design 5）建置跨據點統一平台，含 81 支 API 路由模組，前後端合計約 26 萬行程式碼</li>
+        <li>建立 21 個 Ragic 表單同步模組，將採購、報修、保養、合約等資料落地資料庫，並以「單一真實來源」原則（如廠商主檔）避免重複建檔</li>
+        <li>主導 SQLite 遷移至 PostgreSQL，以 Alembic 管理 22 支 migration，完成測試區與正式區切換，並處理跨程序檔案鎖、序列同步與數值精度等遷移問題</li>
+        <li>設計 115 個權限 key 的 RBAC 模型，含敏感權限群組，並防止權限提升（不得授予自己沒有的權限）</li>
+        <li>開發採購簽核拋轉 Ragic、合約、稽核、報修、保養、樓層巡檢圖（Leaflet 平面圖）、戰情 KPI 等模組，支援 Excel 與 PPT 報表匯出</li>
+        <li>定位並修復影響全站的缺陷，例如同步阻塞導致 worker 當機，並以 PostgreSQL 併發測試補強驗證</li>
+      </ul>
+      <div class="tags">
+        <span>Python</span><span>FastAPI</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span><span>Alembic</span><span>Ragic API</span><span>Leaflet</span>
+      </div>
+    </article>
+    <article class="project" style="margin-top:20px">
+      <h3>飯店營運分析入口網站 portal_analyze</h3>
+      <p style="color:var(--muted)">2026/08 – 迄今｜主導開發</p>
+      <ul>
+        <li>以 FastAPI + React（Ant Design）建置前後端分離架構，含 30 個 API 模組與約 70 個頁面</li>
+        <li>串接 Opera PMS 訂房與營收資料，建立 ADR、住房率、RevPAR 儀表板與訂房進度（Pace）追蹤</li>
+        <li>整合金旭 ERP、Ragic 表單與 OTA 評論資料，將分散的營運資料集中於單一入口</li>
+        <li>導入 Claude API 分析 OTA 評論：規則引擎先行分類，無法判定者再交由 AI 補判</li>
+              <li>自主設計競品分析模組（13 個子頁面），涵蓋價格矩陣與價格軌跡、定價警示、同價性稽核、房型比較、評分定位、AI 可見度追蹤，以及抓取排程與配額管理</li>
+      </ul>
+      <div class="tags">
+        <span>Python</span><span>FastAPI</span><span>React</span><span>Opera PMS</span><span>Power BI</span><span>AI API</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">CONTACT</p>
+    <h2>聯絡</h2>
+    <div class="contact-list">
+      <a class="contact-item" href="tel:0933914892">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        <span>0933-914-892</span>
+      </a>
+      <a class="contact-item" href="mailto:sam2307@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.6V17h16V7.6l-8 5.2z"/></svg>
+        <span>sam2307@gmail.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 黃金昇 Samuel Huang</div>
+</footer>
+
+</body>
+</html>
